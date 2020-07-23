@@ -4,3 +4,7 @@ export interface IStopWatchState {
     timeEnd: number
     isRunning: boolean
 }
+
+export interface IStoreState {
+    stopWatch: IStopWatchState
+}

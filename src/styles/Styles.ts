@@ -12,6 +12,10 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontSize: 19,
     },
+    navigationIcon: {
+        width: 30,
+        height: 30,
+    }
 })
 
 export const colorText = StyleSheet.create({
@@ -36,4 +40,12 @@ export const colorBorder = StyleSheet.create({
     success: { borderColor: 'rgb(19,41,20)' },
     danger: { borderColor: 'rgb(47,16,14)' },
     warning: { borderColor: 'rgb(243,162,60)' },
+})
+
+export const colorTint = StyleSheet.create({
+    disable: { tintColor: 'rgba(152,152,158,0.5)' },
+    normal: { tintColor: 'rgb(152,152,158)' },
+    success: { tintColor: 'rgb(102,203,102)' },
+    danger: { tintColor: 'rgb(228,81,67)' },
+    warning: { tintColor: 'rgb(243,162,60)' },
 })

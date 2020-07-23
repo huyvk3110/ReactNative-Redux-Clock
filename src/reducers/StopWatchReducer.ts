@@ -33,7 +33,7 @@ export default function (state = initialState, action: { type: string, payload?:
             });
         case common.action.ADD_LAP:
             return Object.assign({}, state, {
-                laps: [...state.laps].push(state.timeEnd - state.timeStart)
+                laps: [...state.laps].concat(state.timeEnd - state.timeStart)
             });
         case common.action.RESET_LAP:
             return Object.assign({}, state, {

@@ -1,7 +1,8 @@
 import React from "react";
 import { NavigationContainer, DarkTheme } from "@react-navigation/native";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { styles, colorTint, colorText } from "../styles/Styles";
 import TimeContainer from "../containers/TimeContainer";
 import StopWatchContainer from "../containers/StopWatchContainer";
 
@@ -12,7 +13,11 @@ export default function Navigation() {
         <NavigationContainer theme={DarkTheme}>
             <Tab.Navigator
                 tabBarOptions={{
-                    
+                    labelStyle: {
+                        fontWeight: "bold"
+                    },
+                    activeTintColor: colorText.warning.color,
+                    inactiveTintColor: colorText.normal.color,
                 }}
             >
                 <Tab.Screen
@@ -20,10 +25,11 @@ export default function Navigation() {
                     component={TimeContainer}
                     options={{
                         title: "Time",
-                        tabBarIcon: ({color,focused,size})=>{
-                            return <Image source={require('../assets/png/clock.png')} style={{
-                                
-                            }}/>
+                        tabBarIcon: ({ color, focused, size }) => {
+                            return <Image
+                                source={require('../assets/png/clock.png')}
+                                style={StyleSheet.flatten([styles.navigationIcon, focused ? colorTint.warning : colorTint.normal])}
+                            />
                         }
                     }}
                 />
@@ -32,10 +38,11 @@ export default function Navigation() {
                     component={StopWatchContainer}
                     options={{
                         title: "StopWatch",
-                        tabBarIcon: ({color,focused,size})=>{
-                            return <Image source={require('../assets/png/stop-watch.png')} style={{
-                                
-                            }}/>
+                        tabBarIcon: ({ color, focused, size }) => {
+                            return <Image
+                                source={require('../assets/png/stop-watch.png')}
+                                style={StyleSheet.flatten([styles.navigationIcon, focused ? colorTint.warning : colorTint.normal])}
+                            />
                         }
                     }}
                 />

@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View } from 'react-native';
 import { couterDescrease, couterInscrease } from '../actions/StopWatchActions'
 import { connect } from 'react-redux';
 import StopWatchTimeDisplay from '../components/StopWatchTimeDisplay';
+import StopWatchButtonArea from '../components/StopWatchButtonArea';
+import stopWatchStyles from '../styles/StopWatchStyles';
+import StopWatchLapsList from '../components/StopWatchLapsList';
 
 class StopWatchContainer extends Component {
     render() {
         return (
-            <View>
-                <StopWatchTimeDisplay/>
+            <View style={stopWatchStyles.container.contain}>
+                <StopWatchTimeDisplay />
+                <StopWatchButtonArea />
+                <StopWatchLapsList />
             </View>
         )
     }

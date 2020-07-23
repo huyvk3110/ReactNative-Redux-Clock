@@ -2,26 +2,13 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { couterDescrease, couterInscrease } from '../actions/StopWatchActions'
 import { connect } from 'react-redux';
+import StopWatchTimeDisplay from '../components/StopWatchTimeDisplay';
 
 class StopWatchContainer extends Component {
     render() {
-        let {couterInscrease, couterDescrease} = (this.props as any);
-
         return (
             <View>
-                <Text>Hello stop watch container</Text>
-                <Button
-                    title="Inscrease"
-                    onPress={
-                        couterInscrease
-                    }
-                />
-                <Button
-                    title="Descrease"
-                    onPress={
-                        couterDescrease
-                    }
-                />
+                <StopWatchTimeDisplay/>
             </View>
         )
     }

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import {
-  StatusBar,
+  StatusBar, Text,
 } from 'react-native';
 import { Provider } from "react-redux";
 import Navigation from './src/natigation';

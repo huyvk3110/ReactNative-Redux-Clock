@@ -24,7 +24,7 @@ function StopWatchButtonAreaItem({ title, state, handle }: IStopWatchButtonAreaI
 }
 
 function StopWatchButtonArea({ data, addLap, resetLap, setTimeEnd, startTiming, stopTiming, }: IStopWatchButtonArea) {
-    const { isRunning, laps } = data;
+    let { isRunning, laps } = data;
 
     function onClickLap() {
         if (isRunning) {

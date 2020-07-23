@@ -1,15 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
-import stopWatchStyles from "../styles/StopWatchStyles";
 import { connect } from "react-redux";
 import { IStoreState, IStopWatchState } from "../interface/DataInterface";
+import stopWatchStyles from "../styles/StopWatchStyles";
 import StringUtils from "../utils/StringUtils";
 
 const styles = stopWatchStyles.timeDisplay;
 
 function StopWatchTimeDisplay({ data }: { data: IStopWatchState }) {
-    const { timeStart, timeEnd } = data;
-    const arrs = StringUtils.timeFormatMiliseconds(timeEnd - timeStart);
+    let { timeStart, timeEnd } = data;
+    let arrs = StringUtils.timeFormatMiliseconds(timeEnd - timeStart);
 
     return (
         <View style={styles.contain}>

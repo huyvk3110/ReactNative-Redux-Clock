@@ -12,7 +12,7 @@ let timeOut: NodeJS.Timeout | undefined = undefined;
 
 class StopWatchContainer extends Component<{ data: IStopWatchState, setTimeEnd: Function }> {
     componentDidUpdate() {
-        const { data, setTimeEnd } = this.props;
+        let { data, setTimeEnd } = this.props;
         //Clear old timeout
         if(timeOut) clearTimeout(timeOut)
         //Start timeout 

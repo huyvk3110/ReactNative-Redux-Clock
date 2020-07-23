@@ -37,7 +37,9 @@ export default function (state = initialState, action: { type: string, payload?:
             });
         case common.action.RESET_LAP:
             return Object.assign({}, state, {
-                laps: []
+                laps: [],
+                timeStart: Date.now(),
+                timeEnd: Date.now(),
             });;
         case common.action.SET_TIME_END:
             let nTimeEnd = Date.now()

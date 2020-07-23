@@ -1,12 +1,11 @@
 export default class StringUtils {
     static timeFormatMiliseconds(time: number): string[] {
-        let arrs = [];
-        arrs.push(this.pad(Math.floor(time / (60 * 1000)), 2));
+        let mm = this.pad(Math.floor(time / (60 * 1000)), 2);
         time = time % (60 * 1000);
-        arrs.push(this.pad(Math.floor(time / (60)), 2));
-        time = time % (60);
-        arrs.push(Math.floor(time / 10) < 100 ? this.pad(Math.floor(time / 10), 2): '00')
-        return arrs;
+        let ss = this.pad(Math.floor(time / (1000)), 2);
+        time = time % (1000);
+        let ms = Math.floor(time / 10) < 100 ? this.pad(Math.floor(time / 10), 2): '00'
+        return [mm, ss, ms];
     }
 
     static pad(number: number, width: number, z?: string): string {
